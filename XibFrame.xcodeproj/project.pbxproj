@@ -17,7 +17,6 @@
 		D61144A123C9A96A00994E86 /* XibFrameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61144A023C9A96A00994E86 /* XibFrameUITests.swift */; };
 		D61144B023C9AA1A00994E86 /* XibExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61144AF23C9AA1A00994E86 /* XibExtension.swift */; };
 		D68C17B523CD9EE000FED36A /* VButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C17B423CD9EE000FED36A /* VButton.swift */; };
-		D6B0B2E523CC4EB300CE956A /* ChangeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B0B2E423CC4EB300CE956A /* ChangeSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		D61144A223C9A96A00994E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D61144AF23C9AA1A00994E86 /* XibExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibExtension.swift; sourceTree = "<group>"; };
 		D68C17B423CD9EE000FED36A /* VButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VButton.swift; sourceTree = "<group>"; };
-		D6B0B2E423CC4EB300CE956A /* ChangeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +136,6 @@
 		D61144AE23C9A98F00994E86 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D6B0B2E423CC4EB300CE956A /* ChangeSelector.swift */,
 				D61144AF23C9AA1A00994E86 /* XibExtension.swift */,
 				D68C17B423CD9EE000FED36A /* VButton.swift */,
 			);
@@ -280,7 +277,6 @@
 				D611448323C9A96700994E86 /* ViewController.swift in Sources */,
 				D61144B023C9AA1A00994E86 /* XibExtension.swift in Sources */,
 				D611447F23C9A96700994E86 /* AppDelegate.swift in Sources */,
-				D6B0B2E523CC4EB300CE956A /* ChangeSelector.swift in Sources */,
 				D611448123C9A96700994E86 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
