@@ -85,7 +85,7 @@
 		D611447223C9A96700994E86 = {
 			isa = PBXGroup;
 			children = (
-				D61144AE23C9A98F00994E86 /* Source */,
+				D61144AE23C9A98F00994E86 /* Classes */,
 				D611447D23C9A96700994E86 /* XibFrame */,
 				D611449423C9A96A00994E86 /* XibFrameTests */,
 				D611449F23C9A96A00994E86 /* XibFrameUITests */,
@@ -135,14 +135,14 @@
 			path = XibFrameUITests;
 			sourceTree = "<group>";
 		};
-		D61144AE23C9A98F00994E86 /* Source */ = {
+		D61144AE23C9A98F00994E86 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				D6B0B2E423CC4EB300CE956A /* ChangeSelector.swift */,
 				D61144AF23C9AA1A00994E86 /* XibExtension.swift */,
 				D68C17B423CD9EE000FED36A /* VButton.swift */,
 			);
-			path = Source;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
