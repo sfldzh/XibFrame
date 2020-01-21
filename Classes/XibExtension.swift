@@ -102,7 +102,9 @@ extension UIButton {
     
     private var enabledColor: UIColor? {
         set {
-            objc_setAssociatedObject(self, &buttonEnabledColorKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            if objc_getAssociatedObject(self, &buttonEnabledColorKey) == nil {
+                objc_setAssociatedObject(self, &buttonEnabledColorKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
         }
         get {
             return objc_getAssociatedObject(self, &buttonEnabledColorKey) as? UIColor;
@@ -111,7 +113,9 @@ extension UIButton {
     
     open override var backgroundColor: UIColor?{
         didSet{
-            self.enabledColor = backgroundColor;
+            if !(self.backgroundColor?.compare(tagerColor: oldValue) ?? false) {
+                self.enabledColor = backgroundColor;
+            }
         }
     }
     
@@ -119,6 +123,31 @@ extension UIButton {
         didSet{
             self.backgroundColor = self.isEnabled ? (self.enabledColor ?? self.backgroundColor) : (self.unEnabledColor ?? self.backgroundColor) ;
         }
+    }
+}
+
+extension UIColor{
+    func compare(tagerColor:UIColor?) -> Bool {
+        if tagerColor == nil {
+            return false;
+        }else{
+            var red1:CGFloat = 0.0
+            var red2:CGFloat = 0.0
+            var green1:CGFloat = 0.0
+            var green2:CGFloat = 0.0
+            var blue1:CGFloat = 0.0
+            var blue2:CGFloat = 0.0
+            var alpha1:CGFloat = 0.0
+            var alpha2:CGFloat = 0.0
+            self.getRed(&red1, green: &green1, blue: &blue1, alpha: &alpha1)
+            tagerColor!.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2)
+            if ((red1 == red2)&&(green1 == green2)&&(blue1 == blue2)&&(alpha1 == alpha2)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
     }
 }
 
