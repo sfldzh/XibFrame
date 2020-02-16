@@ -430,3 +430,41 @@ extension UITextField{
         }
     }
 }
+
+extension UIColor{
+    
+    /// 十六进制颜色
+    /// - Parameters:
+    ///   - value: 十六进制数字
+    ///   - a: 透明度
+    func hexa(value:Int32,a:CGFloat) ->UIColor {
+        return UIColor.init(red: CGFloat((value & 0xFF0000) >> 16)/255.0, green: CGFloat((value & 0xFF00) >> 8)/255.0, blue: CGFloat(value & 0xFF)/255.0, alpha: a)
+    }
+    
+    
+    /// 颜色设置，兼容暗黑模式
+    /// - Parameters:
+    ///   - lightColor: 普通模式颜色
+    ///   - darkColor: 暗黑模式颜色
+    func color(lightColor:UIColor, darkColor:UIColor?) -> UIColor {
+        if #available(iOS 13, *) {
+            if darkColor != nil {
+                let color = UIColor.init { (trainCollection) -> UIColor in
+                    switch trainCollection.userInterfaceStyle{
+                    case .light:
+                        return lightColor;
+                    case .dark:
+                        return darkColor ?? lightColor;
+                    default:
+                        return lightColor;
+                    }
+                }
+                return color
+            }else{
+                return lightColor;
+            }
+        }else{
+            return lightColor;
+        }
+    }
+}
