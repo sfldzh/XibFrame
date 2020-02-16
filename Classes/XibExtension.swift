@@ -437,7 +437,7 @@ extension UIColor{
     /// - Parameters:
     ///   - value: 十六进制数字
     ///   - a: 透明度
-    func hexa(value:Int32,a:CGFloat) ->UIColor {
+    static func hexa(value:Int32,a:CGFloat) ->UIColor {
         return UIColor.init(red: CGFloat((value & 0xFF0000) >> 16)/255.0, green: CGFloat((value & 0xFF00) >> 8)/255.0, blue: CGFloat(value & 0xFF)/255.0, alpha: a)
     }
     
@@ -446,7 +446,7 @@ extension UIColor{
     /// - Parameters:
     ///   - lightColor: 普通模式颜色
     ///   - darkColor: 暗黑模式颜色
-    func color(lightColor:UIColor, darkColor:UIColor?) -> UIColor {
+    static func color(lightColor:UIColor, darkColor:UIColor?) -> UIColor {
         if #available(iOS 13, *) {
             if darkColor != nil {
                 let color = UIColor.init { (trainCollection) -> UIColor in
