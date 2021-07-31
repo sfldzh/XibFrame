@@ -15,8 +15,8 @@
 		D611448B23C9A96900994E86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D611448923C9A96900994E86 /* LaunchScreen.storyboard */; };
 		D611449623C9A96A00994E86 /* XibFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D611449523C9A96A00994E86 /* XibFrameTests.swift */; };
 		D61144A123C9A96A00994E86 /* XibFrameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61144A023C9A96A00994E86 /* XibFrameUITests.swift */; };
-		D61144B023C9AA1A00994E86 /* XibExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61144AF23C9AA1A00994E86 /* XibExtension.swift */; };
-		D68C17B523CD9EE000FED36A /* VButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C17B423CD9EE000FED36A /* VButton.swift */; };
+		D69191D126B4F5A100F82148 /* VButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69191CF26B4F5A100F82148 /* VButton.swift */; };
+		D69191D226B4F5A100F82148 /* XibFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69191D026B4F5A100F82148 /* XibFrame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		D611449C23C9A96A00994E86 /* XibFrameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XibFrameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D61144A023C9A96A00994E86 /* XibFrameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibFrameUITests.swift; sourceTree = "<group>"; };
 		D61144A223C9A96A00994E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D61144AF23C9AA1A00994E86 /* XibExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibExtension.swift; sourceTree = "<group>"; };
-		D68C17B423CD9EE000FED36A /* VButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VButton.swift; sourceTree = "<group>"; };
+		D69191CF26B4F5A100F82148 /* VButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VButton.swift; sourceTree = "<group>"; };
+		D69191D026B4F5A100F82148 /* XibFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 		D611447223C9A96700994E86 = {
 			isa = PBXGroup;
 			children = (
-				D61144AE23C9A98F00994E86 /* Classes */,
+				D69191CE26B4F5A100F82148 /* Sources */,
 				D611447D23C9A96700994E86 /* XibFrame */,
 				D611449423C9A96A00994E86 /* XibFrameTests */,
 				D611449F23C9A96A00994E86 /* XibFrameUITests */,
@@ -133,13 +133,13 @@
 			path = XibFrameUITests;
 			sourceTree = "<group>";
 		};
-		D61144AE23C9A98F00994E86 /* Classes */ = {
+		D69191CE26B4F5A100F82148 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D61144AF23C9AA1A00994E86 /* XibExtension.swift */,
-				D68C17B423CD9EE000FED36A /* VButton.swift */,
+				D69191CF26B4F5A100F82148 /* VButton.swift */,
+				D69191D026B4F5A100F82148 /* XibFrame.swift */,
 			);
-			path = Classes;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,10 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D68C17B523CD9EE000FED36A /* VButton.swift in Sources */,
 				D611448323C9A96700994E86 /* ViewController.swift in Sources */,
-				D61144B023C9AA1A00994E86 /* XibExtension.swift in Sources */,
 				D611447F23C9A96700994E86 /* AppDelegate.swift in Sources */,
+				D69191D226B4F5A100F82148 /* XibFrame.swift in Sources */,
+				D69191D126B4F5A100F82148 /* VButton.swift in Sources */,
 				D611448123C9A96700994E86 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +457,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hletong.hletongjppt.XibFrame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -475,6 +476,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hletong.hletongjppt.XibFrame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

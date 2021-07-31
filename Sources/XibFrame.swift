@@ -1,12 +1,7 @@
-//
-//  XibExtension.swift
-//  XibFrame
-//
-//  Created by 施峰磊 on 2020/1/11.
-//  Copyright © 2020 施峰磊. All rights reserved.
-//
-
 import UIKit
+
+/// Current Alamofire version. Necessary since SPM doesn't use dynamic libraries. Plus this will be more accurate.
+let version = "0.0.8"
 
 //MARK: - 基础视图
 extension UIView {
@@ -123,31 +118,6 @@ extension UIButton {
         didSet{
             self.backgroundColor = self.isEnabled ? (self.enabledColor ?? self.backgroundColor) : (self.unEnabledColor ?? self.backgroundColor) ;
         }
-    }
-}
-
-extension UIColor{
-    func compare(tagerColor:UIColor?) -> Bool {
-        if tagerColor == nil {
-            return false;
-        }else{
-            var red1:CGFloat = 0.0
-            var red2:CGFloat = 0.0
-            var green1:CGFloat = 0.0
-            var green2:CGFloat = 0.0
-            var blue1:CGFloat = 0.0
-            var blue2:CGFloat = 0.0
-            var alpha1:CGFloat = 0.0
-            var alpha2:CGFloat = 0.0
-            self.getRed(&red1, green: &green1, blue: &blue1, alpha: &alpha1)
-            tagerColor!.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2)
-            if ((red1 == red2)&&(green1 == green2)&&(blue1 == blue2)&&(alpha1 == alpha2)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        
     }
 }
 
@@ -467,4 +437,28 @@ extension UIColor{
             return lightColor;
         }
     }
+    
+    func compare(tagerColor:UIColor?) -> Bool {
+        if tagerColor == nil {
+            return false;
+        }else{
+            var red1:CGFloat = 0.0
+            var red2:CGFloat = 0.0
+            var green1:CGFloat = 0.0
+            var green2:CGFloat = 0.0
+            var blue1:CGFloat = 0.0
+            var blue2:CGFloat = 0.0
+            var alpha1:CGFloat = 0.0
+            var alpha2:CGFloat = 0.0
+            self.getRed(&red1, green: &green1, blue: &blue1, alpha: &alpha1)
+            tagerColor!.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2)
+            if ((red1 == red2)&&(green1 == green2)&&(blue1 == blue2)&&(alpha1 == alpha2)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+    }
 }
+

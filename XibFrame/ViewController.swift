@@ -22,5 +22,8 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func textChanged(_ sender: UITextField) {
+        print(sender.cText ?? "no")
+    }
 }
 
