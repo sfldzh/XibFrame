@@ -408,7 +408,36 @@ extension UIColor{
     ///   - value: 十六进制数字
     ///   - a: 透明度
     public static func hexa(value:Int32,a:CGFloat) ->UIColor {
-        return UIColor.init(red: CGFloat((value & 0xFF0000) >> 16)/255.0, green: CGFloat((value & 0xFF00) >> 8)/255.0, blue: CGFloat(value & 0xFF)/255.0, alpha: a)
+        let mask = 0x000000FF
+        let r = Int(value >> 16) & mask
+        let g = Int(value >> 8) & mask
+        let b = Int(value) & mask
+        return UIColor.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: a)
+//        return UIColor.init(red: CGFloat((value & 0xFF0000) >> 16)/255.0, green: CGFloat((value & 0xFF00) >> 8)/255.0, blue: CGFloat(value & 0xFF)/255.0, alpha: a)
+    }
+    
+    /// 十六进制颜色
+    /// - Parameters:
+    ///   - value: 十六进制色值
+    ///   - a: 透明度
+    /// - Returns: 颜色
+    public static func hexa(value:String,a:CGFloat) -> UIColor? {
+        var str = value.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        if str.count >= 6{
+            if str.hasPrefix("#"){
+                str = str.subString(rang: NSRange.init(location: 1, length: str.count-1))
+            }
+            let redStr = str.subString(rang: NSRange.init(location: 0, length: 2))
+            let greenStr = str.subString(rang: NSRange.init(location: 2, length: 2))
+            let blueStr = str.subString(rang: NSRange.init(location: 4, length: 2))
+            var red:CUnsignedLongLong = 0, green:CUnsignedLongLong = 0, blue:CUnsignedLongLong = 0;
+            Scanner.init(string: redStr).scanHexInt64(&red)
+            Scanner.init(string: greenStr).scanHexInt64(&green)
+            Scanner.init(string: blueStr).scanHexInt64(&blue)
+            return UIColor.init(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: a)
+        }else{
+            return nil
+        }
     }
     
     
