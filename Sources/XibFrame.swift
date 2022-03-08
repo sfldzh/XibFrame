@@ -1,7 +1,7 @@
 import UIKit
 
 /// Current Alamofire version. Necessary since SPM doesn't use dynamic libraries. Plus this will be more accurate.
-let version = "0.0.8"
+let version = "0.1.0"
 
 //MARK: - 基础视图
 extension UIView {
@@ -421,7 +421,7 @@ extension UIColor{
     ///   - value: 十六进制色值
     ///   - a: 透明度
     /// - Returns: 颜色
-    public static func hexa(value:String,a:CGFloat) -> UIColor? {
+    public static func hexa(value:String,a:CGFloat) -> UIColor {
         var str = value.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         if str.count >= 6{
             if str.hasPrefix("#"){
@@ -436,7 +436,7 @@ extension UIColor{
             Scanner.init(string: blueStr).scanHexInt64(&blue)
             return UIColor.init(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: a)
         }else{
-            return nil
+            return UIColor.white
         }
     }
     
