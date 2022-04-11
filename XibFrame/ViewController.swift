@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didClick(_ sender: UIControl) {
-        self.button.backgroundColor = UIColor.red;
-        self.button.isEnabled = !self.button.isEnabled
+//        self.button.backgroundColor = UIColor.red;
+        self.button.sr_isEnabled = !self.button.isEnabled
         
     }
     

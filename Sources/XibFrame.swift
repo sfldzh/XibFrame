@@ -1,8 +1,5 @@
 import UIKit
 
-/// Current Alamofire version. Necessary since SPM doesn't use dynamic libraries. Plus this will be more accurate.
-let version = "0.1.0"
-
 //MARK: - 基础视图
 extension UIView {
     //TODO: 圆角
@@ -94,6 +91,18 @@ extension UIButton {
         }
     }
     
+    @IBInspectable open var sr_isEnabled: Bool{
+        set {
+            self.isEnabled = newValue
+            DispatchQueue.main.async {
+                self.backgroundColor = self.isEnabled ? (self.enabledColor ?? self.backgroundColor) : (self.unEnabledColor ?? self.backgroundColor)
+            }
+        }
+        get {
+            return self.isEnabled
+        }
+    }
+    
     
     private var enabledColor: UIColor? {
         set {
@@ -108,17 +117,12 @@ extension UIButton {
     
     open override var backgroundColor: UIColor?{
         didSet{
-            if !(self.backgroundColor?.compare(tagerColor: oldValue) ?? false) {
+            if self.enabledColor == nil{
                 self.enabledColor = backgroundColor;
             }
         }
     }
     
-    open override var isEnabled: Bool{
-        didSet{
-            self.backgroundColor = self.isEnabled ? (self.enabledColor ?? self.backgroundColor) : (self.unEnabledColor ?? self.backgroundColor) ;
-        }
-    }
 }
 
 
