@@ -425,7 +425,7 @@ extension UIColor{
     ///   - value: 十六进制色值
     ///   - a: 透明度
     /// - Returns: 颜色
-    public static func hexa(value:String,a:CGFloat) -> UIColor {
+    public static func hex(value:String,a:CGFloat) -> UIColor {
         var str = value.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         if str.count >= 6{
             if str.hasPrefix("#"){
@@ -449,7 +449,7 @@ extension UIColor{
     ///   - value: 十六进制色值
     ///   - a: 透明度
     /// - Returns: 颜色
-    @available(*, deprecated, message: "hexa(value:String,a:CGFloat) -> UIColor? deprecated and will be removed in XibFreme 0.1.0. Use hexa(value:String,a:CGFloat) -> UIColor instead.")
+    @available(*, deprecated, message: "hexa(value:String,a:CGFloat) -> UIColor? deprecated and will be removed in XibFreme 0.1.0. Use hex(value:String,a:CGFloat) -> UIColor instead.")
     public static func hexa(value:String,a:CGFloat) -> UIColor? {
         var str = value.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         if str.count >= 6{
