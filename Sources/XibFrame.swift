@@ -444,6 +444,31 @@ extension UIColor{
         }
     }
     
+    /// 十六进制颜色
+    /// - Parameters:
+    ///   - value: 十六进制色值
+    ///   - a: 透明度
+    /// - Returns: 颜色
+    @available(*, deprecated, message: "hexa(value:String,a:CGFloat) -> UIColor? deprecated and will be removed in XibFreme 0.1.0. Use hexa(value:String,a:CGFloat) -> UIColor instead.")
+    public static func hexa(value:String,a:CGFloat) -> UIColor? {
+        var str = value.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        if str.count >= 6{
+            if str.hasPrefix("#"){
+                str = str.subString(rang: NSRange.init(location: 1, length: str.count-1))
+            }
+            let redStr = str.subString(rang: NSRange.init(location: 0, length: 2))
+            let greenStr = str.subString(rang: NSRange.init(location: 2, length: 2))
+            let blueStr = str.subString(rang: NSRange.init(location: 4, length: 2))
+            var red:CUnsignedLongLong = 0, green:CUnsignedLongLong = 0, blue:CUnsignedLongLong = 0;
+            Scanner.init(string: redStr).scanHexInt64(&red)
+            Scanner.init(string: greenStr).scanHexInt64(&green)
+            Scanner.init(string: blueStr).scanHexInt64(&blue)
+            return UIColor.init(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: a)
+        }else{
+            return nil
+        }
+    }
+    
     
     /// 颜色设置，兼容暗黑模式
     /// - Parameters:
